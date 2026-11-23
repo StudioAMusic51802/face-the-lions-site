@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Face The Lions Studio | Music • Photography • Creative Technology</title>
+  <meta name="description" content="Face The Lions Studio — the music, photography, and web apps of Chuck Roelofs. New album Crowned In Sacrifice — out now." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cgr-creative.com/" />
+  <meta property="og:title" content="Face The Lions Studio | Music • Photography • Creative Technology" />
+  <meta property="og:description" content="The music, photography, and web apps of Chuck Roelofs. New album Crowned In Sacrifice — out now." />
+  <meta property="og:image" content="https://cgr-hub.pages.dev/og-face-the-lions.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="600" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Face The Lions Studio | Music • Photography • Creative Technology" />
+  <meta name="twitter:description" content="The music, photography, and web apps of Chuck Roelofs. New album Crowned In Sacrifice — out now." />
+  <meta name="twitter:image" content="https://cgr-hub.pages.dev/og-face-the-lions.jpg" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Instrument+Serif&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0B0B0E;
+      --surface: #17181D;
+      --ink: #EDE6DA;
+      --muted: #B3AA9C;
+      --line: #3A3A40;
+      --gold: #E09F2D;
+      --gold-2: #C8A24A;
+      --ember: #e0533d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(rgba(8, 8, 12, .55), rgba(8, 8, 12, .55)), url('/smoke-bg.jpg') center / cover no-repeat;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .wrap { position: relative; z-index: 1; }
+    .wrap { width: min(720px, calc(100% - 40px)); margin: 0 auto; padding: 64px 0 48px; text-align: center; }
+    .logo-img { display: block; width: min(720px, 100%); height: auto; margin: 0 auto 18px; border-radius: 12px; }
+    .kicker {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .3em;
+      font-size: .78rem;
+      font-family: -apple-system, 'Segoe UI', sans-serif;
+      margin-bottom: 16px;
+    }
+    h1 { margin: 0 0 10px; font-size: clamp(2.4rem, 7vw, 3.8rem); letter-spacing: -.02em; font-weight: 800; }
+    h2, h3 { font-weight: 700; }
+    .radio { border: 1px solid #333; border-radius: 14px; padding: 18px 0; margin-bottom: 40px; background: #000; overflow: hidden; }
+    .radio-label { color: #ff5a4e; font-weight: 700; font-size: .8rem; letter-spacing: .15em; padding: 0 20px 12px; }
+    .radio-ticker { overflow: hidden; }
+    .radio-track { display: inline-flex; white-space: nowrap; animation: radioscroll 30s linear infinite; }
+    .radio-ticker:hover .radio-track { animation-play-state: paused; }
+    @keyframes radioscroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .radio-track span { color: #ff1a1a; font-weight: 700; font-size: 1.05rem; padding-right: 8px; }
+    h1 .gold { color: var(--gold-2); }
+    .tagline { color: var(--muted); font-style: normal; font-weight: 600; font-size: 1.05rem; margin: 0 0 40px; }
+
+    .album-banner {
+      border: 1px solid var(--ember);
+      border-radius: 14px;
+      padding: 26px 24px;
+      margin-bottom: 40px;
+      background: linear-gradient(180deg, rgba(224, 83, 61, .12), rgba(224, 83, 61, .03));
+    }
+    .album-banner .count { color: var(--ember); text-transform: uppercase; letter-spacing: .24em; font-size: .78rem; font-family: -apple-system, 'Segoe UI', sans-serif; margin-bottom: 10px; }
+    .album-banner h2 { margin: 0 0 6px; font-size: 1.7rem; }
+    .album-banner p { color: var(--muted); margin: 0 0 18px; font-size: .98rem; }
+    .btn {
+      display: inline-block;
+      padding: 13px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: -apple-system, 'Segoe UI', sans-serif;
+      font-weight: 700;
+      font-size: .95rem;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-ember { background: var(--ember); color: #fff; box-shadow: 0 4px 22px rgba(224, 83, 61, .35); }
+    .btn-hero { font-size: 1.15rem; padding: 17px 40px; }
+    .presave-note { color: var(--muted); font-size: .88rem; margin-top: 10px; font-family: -apple-system, 'Segoe UI', sans-serif; }
+    .email-nudge { margin-top: 16px; font-size: .9rem; color: var(--muted); font-family: -apple-system, 'Segoe UI', sans-serif; }
+    .hero-video { margin-bottom: 40px; }
+    .hero-video-wrap { position: relative; }
+    .hero-video-wrap video { width: 100%; border-radius: 14px; display: block; }
+    .video-embed { position: relative; width: 100%; max-width: 560px; aspect-ratio: 16 / 9; margin: 0 auto 10px; border-radius: 14px; overflow: hidden; }
+    .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+    .hero-play {
+      position: absolute; inset: 0; margin: auto;
+      width: 76px; height: 76px; border-radius: 50%;
+      border: 2px solid var(--gold-2); background: rgba(12, 12, 12, .65);
+      color: var(--gold-2); font-size: 1.6rem; line-height: 1; cursor: pointer;
+    }
+    .hero-play.hidden { display: none; }
+    .hero-caption { color: var(--muted); font-size: .9rem; font-family: -apple-system, 'Segoe UI', sans-serif; margin-top: 12px; }
+    .hero-caption a { color: var(--gold-2); text-decoration: none; font-weight: 600; }
+    .hero-caption a:hover { text-decoration: underline; }
+    .email-nudge a { color: var(--gold-2); text-decoration: none; font-weight: 600; }
+    .email-nudge a:hover { text-decoration: underline; }
+    .tracklist ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      columns: 2;
+      column-gap: 28px;
+      text-align: left;
+    }
+    .tracklist li {
+      padding: 7px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 1.02rem;
+      counter-increment: track;
+    }
+    .tracklist ol { counter-reset: track; }
+    .tracklist li::before {
+      content: counter(track, decimal-leading-zero) ". ";
+      color: var(--gold);
+      font-family: -apple-system, 'Segoe UI', sans-serif;
+      font-size: .85rem;
+    }
+    @media (max-width: 520px) { .tracklist ol { columns: 1; } }
+    .btn-gold { background: transparent; border: 1px solid var(--gold); color: var(--gold-2); }
+    .btn-gold:hover { background: var(--gold); color: #0c0c0c; }
+    .btn-spotify { background: #1db954; color: #fff; box-shadow: 0 4px 22px rgba(29, 185, 84, .3); }
+
+    section { margin-bottom: 44px; }
+    .newsletter-embed { margin-top: 18px; }
+    section h3 {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .24em;
+      font-size: .82rem;
+      font-family: -apple-system, 'Segoe UI', sans-serif;
+      margin: 0 0 18px;
+    }
+    .featured {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 28px 24px;
+    }
+    .featured .track { font-size: 1.5rem; margin: 0 0 4px; }
+    .featured .streams { color: var(--muted); font-size: .92rem; margin: 0 0 18px; }
+    .mission-text { font-size: 1.12rem; line-height: 1.75; margin: 0; }
+
+    .links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .links a {
+      display: inline-block;
+      padding: 11px 20px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      text-decoration: none;
+      font-family: -apple-system, 'Segoe UI', sans-serif;
+      font-size: .9rem;
+      background: var(--surface);
+      transition: border-color .15s, color .15s;
+    }
+    .links a:hover { border-color: var(--gold); color: var(--gold-2); }
+
+    .apps-note { color: var(--muted); font-size: .95rem; margin: 0 0 16px; }
+
+    footer { margin-top: 56px; color: var(--muted); font-size: .88rem; }
+    footer .motto { color: var(--gold-2); font-style: italic; margin-bottom: 8px; }
+    footer .apps-link { margin-bottom: 8px; }
+    footer .apps-link a { color: var(--gold-2); text-decoration: none; font-family: -apple-system, 'Segoe UI', sans-serif; font-weight: 600; }
+    footer .apps-link a:hover { text-decoration: underline; }
+    h1, h2 { font-family: "Instrument Serif", Georgia, serif; }
+    section h3 { font-family: "Instrument Serif", Georgia, serif; text-transform: none; letter-spacing: .02em; font-size: 1.2rem; color: #C8A24A; }
+    .kicker { color: #C8A24A; }
+    .tagline { color: #D8D0C2; }
+    .hero-caption a, .email-nudge a { color: #C8A24A; }
+    .section-dark { background: #14181C !important; color: #E8E2D9; border-color: #343A40 !important; }
+    .section-dark h3 { color: #C8A24A; }
+    .section-dark .streams, .section-dark .apps-note { color: #9AA0A6; }
+    .section-dark-card { background: #2B3035; color: #E8E2D9; border: 1px solid #343A40; border-radius: 14px; padding: 28px 24px; }
+    .section-dark-card h3 { color: #C8A24A; }
+    .section-dark-card li { border-color: #343A40; }
+    .section-dark-card li::before { color: #C8A24A; }
+    .section-alt { background: #1D1E24; border-radius: 14px; padding: 28px 24px; }
+    .section-alt h3 { color: #C8A24A; }
+    .section-alt .apps-note { color: #B3AA9C; }
+    footer { background: #14181C; color: #9AA0A6; border-radius: 14px; padding: 28px 24px; }
+    footer .motto { color: #C8A24A; }
+    footer .apps-link a { color: #C8A24A; }
+    .featured .btn { display: block; width: fit-content; max-width: 100%; margin: 12px auto; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <img class="logo-img" src="/face-the-lions-banner.jpg" alt="Face The Lions Studio — Sight Is Not The Same As Vision" />
+      <h1>Music • Photography • <span class="gold">Creative Technology</span></h1>
+      <p class="tagline">The creative world of Chuck Roelofs — every lyric original.</p>
+    </header>
+
+    <section class="hero-video">
+      <div class="hero-video-wrap" id="heroVideoWrap">
+        <video id="heroVideo" poster="print-store-hero-poster.jpg" playsinline preload="none" loop src="print-store-hero.mp4"></video>
+        <button class="hero-play" id="heroPlayBtn" type="button" aria-label="Play the print store video">▶</button>
+      </div>
+      <p class="hero-caption">The Face The Lions Studio print store is open — <a href="https://chuckroelofsphotography.pixieset.com/photoprintstore/" target="_blank" rel="noopener">shop prints →</a></p>
+    </section>
+
+    <section class="radio">
+      <div class="radio-label">HEARD ON THE RADIO • BODY OF BELIEF RADIO</div>
+      <div class="radio-ticker">
+        <div class="radio-track">
+          <span>The Heartfelt • Nov 9, 8:27 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Dancin' Under Sun • Nov 9, 6:45 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;New Life • Nov 9, 4:17 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Praisin' My Jesus Now • Nov 9, 2:43 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+          <span>The Heartfelt • Nov 9, 8:27 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Dancin' Under Sun • Nov 9, 6:45 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;New Life • Nov 9, 4:17 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Praisin' My Jesus Now • Nov 9, 2:43 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured">
+      <h3>Our Mission</h3>
+      <p class="mission-text">Face The Lions Studio exists to make music and art that outlives the moment. Every lyric my own, written from the heart, for the one person who needs to hear it. And through my photography, to show the beauty God put in this world that people walk right past. I don't create for numbers — I create because God gave me something to say and something to see, and if it reaches one person, it's done its job. Sight is not the same as vision.</p>
+    </section>
+
+    <section class="featured section-dark">
+      <h3>Watch My Story</h3>
+      <p class="track">Sight Is Not The Same As Vision</p>
+      <p class="apps-note">The story behind the tagline — God at the center, and why the world doesn't get to define what you can do.</p>
+      <a class="btn btn-gold" href="https://www.youtube.com/watch?v=Qz2YrrvZ0xY" target="_blank" rel="noopener">Watch the story video →</a>
+    </section>
+
+    <div class="album-banner">
+      <h2>Crowned In Sacrifice</h2>
+      <p id="album-sub">The debut metal album. Out now.</p>
+      <div id="presave-cta">
+        <a class="btn btn-ember btn-hero" href="https://distrokid.com/hyperfollow/cgrcreative/crowned-in-sacrifice-2" target="_blank" rel="noopener">Stream the album →</a>
+      </div>
+      <div id="stream-cta">
+        <div class="links">
+          <a class="btn btn-spotify" href="https://open.spotify.com/artist/42YhRJXXXv6ewRAZYzDFm9" target="_blank" rel="noopener">Spotify →</a>
+          <a class="btn btn-gold" href="https://music.apple.com/us/artist/cgr-creative/1896618343" target="_blank" rel="noopener">Apple Music →</a>
+          <a class="btn btn-gold" href="https://music.amazon.com/artists/B0H1MZRJ4R/cgr-creative" target="_blank" rel="noopener">Amazon Music →</a>
+        </div>
+      </div>
+      <div class="email-nudge">Get the music first — <a href="#newsletter">join the Face The Lions Studio email list →</a></div>
+    </div>
+
+    <section class="featured section-dark-card">
+      <h3>The 13 tracks</h3>
+      <p class="apps-note">Thirteen tracks, every lyric original — you'll have to hear them to know them.</p>
+      <a class="btn btn-spotify" href="https://open.spotify.com/artist/42YhRJXXXv6ewRAZYzDFm9" target="_blank" rel="noopener">Hear them on Spotify →</a>
+    </section>
+
+    <section class="newsletter section-alt" id="newsletter">
+      <h3>Get the music first</h3>
+      <p class="apps-note">New songs, album news, and behind-the-scenes — straight to your inbox. No spam, ever.</p>
+      <div class="newsletter-embed">
+        <iframe width="540" height="305" src="https://cb2490e3.sibforms.com/v2/serve/MUIFADksDUmJh3bNFGKoMNkxIOTIhWBaKgz7XtfTpb_V3ojx-zUvclAq0ZyLfw4NDnmXL69sb5A9NesF-eYZeROg34Bc9iKlBVZHD4wWYsxFNuB1oAALrp7ty_lV8wdOk5ZzoQnBtLD9aMvPWVBvGN7v7nA-w11IAaB7dCzuKlusxx561nhEKoUiEfIE_R0WmZsUMArLGawHtFh5nw==" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+      </div>
+    </section>
+
+    <section class="featured section-dark">
+      <h3>Featured track</h3>
+      <p class="track">Jump</p>
+      <a class="btn btn-spotify" href="https://open.spotify.com/track/1HDlSD9xrnD3R2RRihWC5z" target="_blank" rel="noopener">Listen to Jump →</a>
+    </section>
+
+    <section>
+      <h3>Music</h3>
+      <p class="apps-note">Music released as CGR Creative, a Face The Lions Studio label.</p>
+      <div class="links">
+        <a href="https://open.spotify.com/artist/42YhRJXXXv6ewRAZYzDFm9" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://music.apple.com/us/artist/cgr-creative/1896618343" target="_blank" rel="noopener">Apple Music</a>
+        <a href="https://music.youtube.com/@chuckroelofs" target="_blank" rel="noopener">YouTube Music</a>
+        <a href="https://music.amazon.com/artists/B0H1MZRJ4R/cgr-creative" target="_blank" rel="noopener">Amazon Music</a>
+        <a href="https://www.iheart.com/artist/cgr-creative-50743276" target="_blank" rel="noopener">iHeart</a>
+      </div>
+    </section>
+
+    <section>
+      <h3>Find Face The Lions Studio</h3>
+      <div class="links">
+        <a href="https://www.facebook.com/CGRCreative58" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://instagram.com/facethelionsstudio" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://tiktok.com/@chuckroelofsphotography" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.threads.com/@cgr_creative" target="_blank" rel="noopener">Threads</a>
+        <a href="https://chuckroelofs.substack.com" target="_blank" rel="noopener">Substack</a>
+      </div>
+    </section>
+
+    <section class="featured">
+      <h3>Photography</h3>
+      <p class="apps-note">Professional photography — galleries, the fall color series, and client work from years behind the lens.</p>
+      <p class="apps-note">As featured on FOX 9 (2020) — "Don't let anyone tell you you can't do something."</p>
+      <div class="video-embed"><iframe src="https://www.youtube.com/embed/5LeZpVlqTUA" title="FOX 9: Blind Minnesota photographer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <a class="btn btn-gold" href="https://chuckroelofsphotography.myportfolio.com/" target="_blank" rel="noopener">View the photography portfolio →</a>
+      <a class="btn btn-gold" href="https://chuckroelofsphotography.pixieset.com/photoprintstore/" target="_blank" rel="noopener">Shop prints →</a>
+      <a class="btn btn-gold" href="https://www.lulu.com/shop/chuck-roelofs/chucks-2027-photo-wall-calendar/paperback/product-p68k5qr.html?page=1&pageSize=4" target="_blank" rel="noopener">2027 Calendar — $25 →</a>
+      <a class="btn btn-gold" href="https://app.amazecommerce.com/shop/cgr-creative" target="_blank" rel="noopener">Shop merch →</a>
+    </section>
+
+    <section class="featured section-alt">
+      <h3>Creative Technology</h3>
+      <p class="apps-note">Custom web apps — a music player, a mastering studio, and more, designed and built by Chuck.</p>
+      <a class="btn btn-gold" href="https://cgr-apps.pages.dev/" target="_blank" rel="noopener">Web apps by Chuck →</a>
+    </section>
+
+    <footer>
+      <div class="motto">"Sight is not the same as vision."</div>
+      <div class="apps-link"><a href="https://cgr-apps.pages.dev/" target="_blank" rel="noopener">Web apps by Chuck →</a></div>
+      <div>© 2026 Face The Lions Studio</div>
+    </footer>
+
+  </div>
+<script>
+(function () {
+  var btn = document.getElementById('heroPlayBtn');
+  var video = document.getElementById('heroVideo');
+  if (btn && video) {
+    btn.addEventListener('click', function () {
+      video.play();
+      btn.classList.add('hidden');
+    });
+    video.addEventListener('pause', function () {
+      btn.classList.remove('hidden');
+    });
+  }
+})();
+</script>
+</body>
+</html>
