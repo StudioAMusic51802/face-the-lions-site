@@ -83,7 +83,7 @@
       .x-links a:hover { color: var(--x-gold); }
       .x-burger { display: none; width: 48px; height: 48px; border: 1px solid var(--x-line); background: transparent; border-radius: 50%; color: var(--x-cream); cursor: pointer; align-items: center; justify-content: center; }
       .x-burger svg { width: 22px; height: 22px; }
-      @media (max-width: 820px) {
+      @media (max-width: 1040px) {
         .x-burger { display: inline-flex; }
         .x-nav__bar { flex-wrap: wrap; row-gap: 0; }
         .x-links { display: none; order: 3; flex: 0 0 calc(100% + 2 * var(--x-pad)); margin: 0 calc(-1 * var(--x-pad)); flex-direction: column; align-items: stretch; gap: 0; padding: 8px var(--x-pad) 20px; }
@@ -243,6 +243,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#photography">Photography</a></li>
             <li><a href="#music">Music</a></li>
+            <li><a href="#apps">Apps</a></li>
             <li><a href="#shop">Shop</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -475,12 +476,50 @@
                 <p>The CGR Creative merch store.</p>
                 <span class="x-arrow">Shop merch →</span>
               </a>
-              <a class="x-card x-tilecard" href="https://cgr-apps.pages.dev/" target="_blank" rel="noopener">
+              <a class="x-card x-tilecard" href="https://www.lulu.com/shop/chuck-roelofs/chucks-2027-photo-wall-calendar/paperback/product-p68k5qr.html?page=1&amp;pageSize=4" target="_blank" rel="noopener">
                 <span class="x-num" aria-hidden="true">03</span>
-                <h3 class="x-h3">Web apps by Chuck</h3>
-                <p>Custom web apps: a music player, a mastering studio, and more, designed and built by Chuck.</p>
-                <span class="x-arrow">See the apps →</span>
+                <h3 class="x-h3">2027 Calendar</h3>
+                <p>A year of Minnesota photography for your wall. $25.</p>
+                <span class="x-arrow">Get the calendar →</span>
               </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="x-sec" id="apps" data-view="apps" aria-labelledby="apps-h">
+          <div class="x-wrap">
+            <div class="x-reveal">
+              <div class="x-eye" aria-hidden="true"><i></i></div>
+              <p class="x-kicker">Apps</p>
+              <h2 class="x-h2" id="apps-h">Built by <em>Chuck</em></h2>
+              <p class="x-lead">Web apps I designed and built myself. Every one runs right in your browser.</p>
+            </div>
+            <div class="x-shop x-reveal">
+              <a class="x-card x-tilecard" href="https://soria-player.pages.dev/" target="_blank" rel="noopener">
+                <span class="x-num" aria-hidden="true">01</span>
+                <h3 class="x-h3">Soria</h3>
+                <p>Your world, your music. A free player for your own tracks. No account, no ads.</p>
+                <span class="x-arrow">Open Soria →</span>
+              </a>
+              <a class="x-card x-tilecard" href="https://white-morning-28c1.pages.dev/" target="_blank" rel="noopener">
+                <span class="x-num" aria-hidden="true">02</span>
+                <h3 class="x-h3">CGR Music Player</h3>
+                <p>The full CGR Creative catalog, with genre browsing and switchable themes.</p>
+                <span class="x-arrow">Open the player →</span>
+              </a>
+              <a class="x-card x-tilecard" href="https://cgr-audiomaster.pages.dev/" target="_blank" rel="noopener">
+                <span class="x-num" aria-hidden="true">03</span>
+                <h3 class="x-h3">Audio Mastering Studio</h3>
+                <p>Master a track in your browser: EQ, compressor, limiter, and loudness metering.</p>
+                <span class="x-arrow">Open the studio →</span>
+              </a>
+            </div>
+            <div class="x-card x-reveal" style="margin-top: 16px; text-align: center; padding: clamp(28px, 4vw, 44px);">
+              <h3 class="x-h3">Need an app for your small business?</h3>
+              <p class="x-lead" style="margin-inline: auto;">I build custom web apps: players, tools, booking pages, and more, designed around your work.</p>
+              <div class="x-btns" style="justify-content: center;">
+                <a class="x-btn x-btn--solid" href="mailto:cf51802002@gmail.com">Email Chuck</a>
+              </div>
             </div>
           </div>
         </section>
@@ -531,7 +570,7 @@
         }
 
         /* views with hash routing */
-        var VIEWS = ["home", "about", "photography", "music", "shop", "contact"];
+        var VIEWS = ["home", "about", "photography", "music", "apps", "shop", "contact"];
         var parts = document.querySelectorAll("[data-view]");
         var tabs = document.querySelectorAll(".x-links a");
         var current = null;
