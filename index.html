@@ -1,337 +1,557 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Face The Lions Studio | Music • Photography • Creative Technology</title>
-  <meta name="description" content="Face The Lions Studio — the music, photography, and web apps of Chuck Roelofs. New single Gospel PowerPoint — out now." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://cgr-creative.com/" />
-  <meta property="og:title" content="Face The Lions Studio | Music • Photography • Creative Technology" />
-  <meta property="og:description" content="The music, photography, and web apps of Chuck Roelofs. New single Gospel PowerPoint — out now." />
-  <meta property="og:image" content="https://cgr-hub.pages.dev/og-face-the-lions.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="600" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Face The Lions Studio | Music • Photography • Creative Technology" />
-  <meta name="twitter:description" content="The music, photography, and web apps of Chuck Roelofs. New single Gospel PowerPoint — out now." />
-  <meta name="twitter:image" content="https://cgr-hub.pages.dev/og-face-the-lions.jpg" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Instrument+Serif&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #0B0B0E;
-      --surface: #17181D;
-      --ink: #EDE6DA;
-      --muted: #B3AA9C;
-      --line: #3A3A40;
-      --gold: #E09F2D;
-      --gold-2: #C8A24A;
-      --ember: #e0533d;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "Inter", system-ui, -apple-system, 'Segoe UI', sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(rgba(8, 8, 12, .55), rgba(8, 8, 12, .55)), url('/smoke-bg.jpg') center / cover no-repeat;
-      pointer-events: none;
-      z-index: 0;
-    }
-    .wrap { position: relative; z-index: 1; }
-    .wrap { width: min(720px, calc(100% - 40px)); margin: 0 auto; padding: 64px 0 48px; text-align: center; }
-    .logo-img { display: block; width: min(720px, 100%); height: auto; margin: 0 auto 18px; border-radius: 12px; }
-    .kicker {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: .3em;
-      font-size: .78rem;
-      font-family: -apple-system, 'Segoe UI', sans-serif;
-      margin-bottom: 16px;
-    }
-    h1 { margin: 0 0 10px; font-size: clamp(2.4rem, 7vw, 3.8rem); letter-spacing: -.02em; font-weight: 800; }
-    h2, h3 { font-weight: 700; }
-    .radio { border: 1px solid #333; border-radius: 14px; padding: 18px 0; margin-bottom: 40px; background: #000; overflow: hidden; }
-    .radio-label { color: #ff5a4e; font-weight: 700; font-size: .8rem; letter-spacing: .15em; padding: 0 20px 12px; }
-    .radio-ticker { overflow: hidden; }
-    .radio-track { display: inline-flex; white-space: nowrap; animation: radioscroll 30s linear infinite; }
-    .radio-ticker:hover .radio-track { animation-play-state: paused; }
-    @keyframes radioscroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .radio-track span { color: #ff1a1a; font-weight: 700; font-size: 1.05rem; padding-right: 8px; }
-    h1 .gold { color: var(--gold-2); }
-    .tagline { color: var(--muted); font-style: normal; font-weight: 600; font-size: 1.05rem; margin: 0 0 40px; }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Face The Lions Studio | Music • Photography • Creative Technology</title>
+    <meta name="description" content="Face The Lions Studio — the music, photography, and web apps of Chuck Roelofs. New single Gospel PowerPoint — out now." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cgr-creative.com/" />
+    <meta property="og:title" content="Face The Lions Studio | Music • Photography • Creative Technology" />
+    <meta property="og:description" content="The music, photography, and web apps of Chuck Roelofs. New single Gospel PowerPoint — out now." />
+    <meta property="og:image" content="https://cgr-hub.pages.dev/og-face-the-lions.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="600" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Face The Lions Studio | Music • Photography • Creative Technology" />
+    <meta name="twitter:description" content="The music, photography, and web apps of Chuck Roelofs. New single Gospel PowerPoint — out now." />
+    <meta name="twitter:image" content="https://cgr-hub.pages.dev/og-face-the-lions.jpg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="hark.css" />
+    <link rel="stylesheet" href="hark-hero.css" />
+    <style>
+      :root {
+        --x-ink: #0b0b0e;
+        --x-ink-2: #141419;
+        --x-ink-3: #1c1c23;
+        --x-gold: #c8a24a;
+        --x-amber: #e09f2d;
+        --x-ember: #e0533d;
+        --x-ember-deep: #b23524;
+        --x-cream: #ede6da;
+        --x-cream-2: #b9b1a4;
+        --x-line: rgba(200, 162, 74, 0.28);
+        --x-serif: "Instrument Serif", "Playfair Display", Georgia, serif;
+        --x-sans: "Inter", var(--sans), system-ui, sans-serif;
+        --x-pad: clamp(20px, 5vw, 64px);
+        --x-max: 1240px;
+      }
+      html { color-scheme: dark; }
+      body.x-body { background: var(--x-ink); color: var(--x-cream); font-family: var(--x-sans); font-size: 17px; line-height: 1.6; }
+      body.x-body::before { content: ""; position: fixed; inset: 0; background: linear-gradient(rgba(8, 8, 12, 0.55), rgba(8, 8, 12, 0.55)), url("smoke-bg.jpg") center / cover no-repeat; pointer-events: none; z-index: 0; }
+      .page.x-site { max-width: none; padding: 0; gap: 0; display: block; position: relative; z-index: 1; }
+      .x-site a { color: inherit; }
+      .x-site :focus-visible { outline: 2px solid var(--x-amber); outline-offset: 3px; }
+      .x-wrap { max-width: var(--x-max); margin: 0 auto; padding-inline: var(--x-pad); }
+      .x-sec { padding-block: clamp(72px, 11vw, 140px); scroll-margin-top: 64px; }
 
-    .album-banner {
-      border: 1px solid var(--ember);
-      border-radius: 14px;
-      padding: 26px 24px;
-      margin-bottom: 40px;
-      background: linear-gradient(180deg, rgba(224, 83, 61, .12), rgba(224, 83, 61, .03));
-    }
-    .album-banner .count { color: var(--ember); text-transform: uppercase; letter-spacing: .24em; font-size: .78rem; font-family: -apple-system, 'Segoe UI', sans-serif; margin-bottom: 10px; }
-    .album-banner h2 { margin: 0 0 6px; font-size: 1.7rem; }
-    .album-banner p { color: var(--muted); margin: 0 0 18px; font-size: .98rem; }
-    .btn {
-      display: inline-block;
-      padding: 13px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-family: -apple-system, 'Segoe UI', sans-serif;
-      font-weight: 700;
-      font-size: .95rem;
-      transition: transform .15s, box-shadow .15s;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-ember { background: var(--ember); color: #fff; box-shadow: 0 4px 22px rgba(224, 83, 61, .35); }
-    .btn-hero { font-size: 1.15rem; padding: 17px 40px; }
-    .presave-note { color: var(--muted); font-size: .88rem; margin-top: 10px; font-family: -apple-system, 'Segoe UI', sans-serif; }
-    .email-nudge { margin-top: 16px; font-size: .9rem; color: var(--muted); font-family: -apple-system, 'Segoe UI', sans-serif; }
-    .hero-video { margin-bottom: 40px; }
-    .hero-video-wrap { position: relative; }
-    .hero-video-wrap video { width: 100%; border-radius: 14px; display: block; }
-    .video-embed { position: relative; width: 100%; max-width: 560px; aspect-ratio: 16 / 9; margin: 0 auto 10px; border-radius: 14px; overflow: hidden; }
-    .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
-    .hero-play {
-      position: absolute; inset: 0; margin: auto;
-      width: 76px; height: 76px; border-radius: 50%;
-      border: 2px solid var(--gold-2); background: rgba(12, 12, 12, .65);
-      color: var(--gold-2); font-size: 1.6rem; line-height: 1; cursor: pointer;
-    }
-    .hero-play.hidden { display: none; }
-    .hero-caption { color: var(--muted); font-size: .9rem; font-family: -apple-system, 'Segoe UI', sans-serif; margin-top: 12px; }
-    .hero-caption a { color: var(--gold-2); text-decoration: none; font-weight: 600; }
-    .hero-caption a:hover { text-decoration: underline; }
-    .email-nudge a { color: var(--gold-2); text-decoration: none; font-weight: 600; }
-    .email-nudge a:hover { text-decoration: underline; }
-    .tracklist ol {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      columns: 2;
-      column-gap: 28px;
-      text-align: left;
-    }
-    .tracklist li {
-      padding: 7px 0;
-      border-bottom: 1px solid var(--line);
-      font-size: 1.02rem;
-      counter-increment: track;
-    }
-    .tracklist ol { counter-reset: track; }
-    .tracklist li::before {
-      content: counter(track, decimal-leading-zero) ". ";
-      color: var(--gold);
-      font-family: -apple-system, 'Segoe UI', sans-serif;
-      font-size: .85rem;
-    }
-    @media (max-width: 520px) { .tracklist ol { columns: 1; } }
-    .btn-gold { background: transparent; border: 1px solid var(--gold); color: var(--gold-2); }
-    .btn-gold:hover { background: var(--gold); color: #0c0c0c; }
-    .btn-spotify { background: #1db954; color: #fff; box-shadow: 0 4px 22px rgba(29, 185, 84, .3); }
+      /* type */
+      .x-kicker { font: 600 13px/1.3 var(--x-sans); letter-spacing: 0.18em; text-transform: uppercase; color: var(--x-gold); margin: 0 0 18px; }
+      .x-h2 { font: 400 clamp(44px, 7vw, 88px)/0.98 var(--x-serif); letter-spacing: -0.01em; margin: 0 0 28px; color: var(--x-cream); }
+      .x-h2 em { color: var(--x-gold); font-style: italic; }
+      .x-h3 { font: 400 clamp(28px, 3.4vw, 40px)/1.05 var(--x-serif); margin: 0 0 12px; }
+      .x-lead { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.65; color: var(--x-cream); max-width: 62ch; }
+      .x-lead + .x-lead { margin-top: 1em; }
+      .x-small { font-size: 14px; color: var(--x-cream-2); }
 
-    section { margin-bottom: 44px; }
-    .newsletter-embed { margin-top: 18px; }
-    section h3 {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: .24em;
-      font-size: .82rem;
-      font-family: -apple-system, 'Segoe UI', sans-serif;
-      margin: 0 0 18px;
-    }
-    .featured {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 28px 24px;
-    }
-    .featured .track { font-size: 1.5rem; margin: 0 0 4px; }
-    .featured .streams { color: var(--muted); font-size: .92rem; margin: 0 0 18px; }
-    .mission-text { font-size: 1.12rem; line-height: 1.75; margin: 0; }
+      /* buttons */
+      .x-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+      .x-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 0 26px; border-radius: 999px; font: 600 16px/1 var(--x-sans); letter-spacing: 0.01em; text-decoration: none; border: 1.5px solid var(--x-gold); color: var(--x-cream); background: transparent; transition: background var(--dur-quick) var(--ease-out), color var(--dur-quick) var(--ease-out), box-shadow var(--dur-quick) var(--ease-out); }
+      .x-btn:hover { background: rgba(200, 162, 74, 0.12); box-shadow: 0 0 24px rgba(224, 159, 45, 0.25); }
+      .x-btn--solid { background: var(--x-gold); color: var(--x-ink) !important; border-color: var(--x-gold); }
+      .x-btn--solid:hover { background: var(--x-amber); border-color: var(--x-amber); }
+      .x-btn--ember { background: var(--x-ember-deep); border-color: var(--x-ember-deep); color: #fff !important; }
+      .x-btn--ember:hover { background: #9a2d1f; border-color: #9a2d1f; box-shadow: 0 0 28px rgba(224, 83, 61, 0.35); }
 
-    .links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-    .links a {
-      display: inline-block;
-      padding: 11px 20px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--ink);
-      text-decoration: none;
-      font-family: -apple-system, 'Segoe UI', sans-serif;
-      font-size: .9rem;
-      background: var(--surface);
-      transition: border-color .15s, color .15s;
-    }
-    .links a:hover { border-color: var(--gold); color: var(--gold-2); }
+      /* nav */
+      .x-nav { position: fixed; inset: 0 0 auto 0; z-index: 50; transition: background var(--dur-quick) var(--ease-out), border-color var(--dur-quick) var(--ease-out); border-bottom: 1px solid transparent; }
+      .x-nav.is-solid, .x-nav.is-open { background: rgba(11, 11, 14, 0.88); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border-color: var(--x-line); }
+      .x-nav__bar { max-width: var(--x-max); margin: 0 auto; padding: 10px var(--x-pad); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+      .x-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-height: 48px; }
+      .x-brand img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1px var(--x-gold), 0 0 18px rgba(224, 159, 45, 0.45); }
+      .x-brand span { font: 400 22px/1 var(--x-serif); letter-spacing: 0.01em; }
+      .x-links { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0 0 0 auto; padding: 0; }
+      .x-links a { display: flex; align-items: center; min-height: 48px; padding: 0 14px; font: 500 15px/1 var(--x-sans); text-decoration: none; color: var(--x-cream); border-radius: 999px; }
+      .x-links a:hover { color: var(--x-gold); }
+      .x-burger { display: none; width: 48px; height: 48px; border: 1px solid var(--x-line); background: transparent; border-radius: 50%; color: var(--x-cream); cursor: pointer; align-items: center; justify-content: center; }
+      .x-burger svg { width: 22px; height: 22px; }
+      @media (max-width: 820px) {
+        .x-burger { display: inline-flex; }
+        .x-nav__bar { flex-wrap: wrap; row-gap: 0; }
+        .x-links { display: none; order: 3; flex: 0 0 calc(100% + 2 * var(--x-pad)); margin: 0 calc(-1 * var(--x-pad)); flex-direction: column; align-items: stretch; gap: 0; padding: 8px var(--x-pad) 20px; }
+        .x-nav.is-open .x-links { display: flex; }
+        .x-links a { font-size: 20px; min-height: 56px; border-bottom: 1px solid rgba(237, 230, 218, 0.08); border-radius: 0; padding: 0 4px; }
+        .x-brand span { font-size: 19px; }
+      }
 
-    .apps-note { color: var(--muted); font-size: .95rem; margin: 0 0 16px; }
+      /* hero */
+      .x-hero { position: relative; padding-top: 80px; padding-bottom: clamp(48px, 8vh, 88px); }
+      .x-hero h1 { margin: 0; }
+      .x-hero__banner { display: block; width: 100%; height: auto; border-radius: 16px; }
+      .x-hero__copy { display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: clamp(28px, 5vw, 48px); }
+      .x-hero__copy .x-btns { justify-content: center; }
+      .x-hero__sub { font-size: clamp(18px, 1.8vw, 22px); line-height: 1.5; max-width: 40ch; margin: 0; color: var(--x-cream); }
 
-    footer { margin-top: 56px; color: var(--muted); font-size: .88rem; }
-    footer .motto { color: var(--gold-2); font-style: italic; margin-bottom: 8px; }
-    footer .apps-link { margin-bottom: 8px; }
-    footer .apps-link a { color: var(--gold-2); text-decoration: none; font-family: -apple-system, 'Segoe UI', sans-serif; font-weight: 600; }
-    footer .apps-link a:hover { text-decoration: underline; }
-    h1, h2 { font-family: "Instrument Serif", Georgia, serif; }
-    section h3 { font-family: "Instrument Serif", Georgia, serif; text-transform: none; letter-spacing: .02em; font-size: 1.2rem; color: #C8A24A; }
-    .kicker { color: #C8A24A; }
-    .tagline { color: #D8D0C2; }
-    .hero-caption a, .email-nudge a { color: #C8A24A; }
-    .section-dark { background: #14181C !important; color: #E8E2D9; border-color: #343A40 !important; }
-    .section-dark h3 { color: #C8A24A; }
-    .section-dark .streams, .section-dark .apps-note { color: #9AA0A6; }
-    .section-dark-card { background: #2B3035; color: #E8E2D9; border: 1px solid #343A40; border-radius: 14px; padding: 28px 24px; }
-    .section-dark-card h3 { color: #C8A24A; }
-    .section-dark-card li { border-color: #343A40; }
-    .section-dark-card li::before { color: #C8A24A; }
-    .section-alt { background: #1D1E24; border-radius: 14px; padding: 28px 24px; }
-    .section-alt h3 { color: #C8A24A; }
-    .section-alt .apps-note { color: #B3AA9C; }
-    footer { background: #14181C; color: #9AA0A6; border-radius: 14px; padding: 28px 24px; }
-    footer .motto { color: #C8A24A; }
-    footer .apps-link a { color: #C8A24A; }
-    .featured .btn { display: block; width: fit-content; max-width: 100%; margin: 12px auto; }
-  </style>
-</head>
-<body>
-  <div class="wrap">
+      /* lion's-eye glow motif */
+      .x-eye { display: flex; align-items: center; gap: 14px; margin: 0 0 22px; max-width: 220px; }
+      .x-eye::before, .x-eye::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--x-gold)); }
+      .x-eye::after { background: linear-gradient(90deg, var(--x-gold), transparent); }
+      .x-eye i { width: 9px; height: 9px; border-radius: 50%; background: var(--x-amber); box-shadow: 0 0 10px 2px rgba(224, 159, 45, 0.8), 0 0 30px 6px rgba(224, 159, 45, 0.35); animation: x-glow 3.6s ease-in-out infinite; }
+      .x-eye--center { margin-inline: auto; }
+      @keyframes x-glow { 50% { box-shadow: 0 0 6px 1px rgba(224, 159, 45, 0.6), 0 0 16px 3px rgba(224, 159, 45, 0.2); } }
 
-    <header>
-      <img class="logo-img" src="/face-the-lions-banner.jpg" alt="Face The Lions Studio — Sight Is Not The Same As Vision" />
-      <h1>Music • Photography • <span class="gold">Creative Technology</span></h1>
-      <p class="tagline">The creative world of Chuck Roelofs — every lyric original.</p>
-    </header>
+      /* ticker */
+      .x-ticker { display: flex; align-items: stretch; background: var(--x-ember-deep); color: #fff; border-block: 1px solid rgba(255, 255, 255, 0.18); overflow: hidden; position: relative; z-index: 2; }
+      .x-ticker__label { flex: none; display: flex; align-items: center; gap: 10px; padding: 0 20px; background: var(--x-ink); color: var(--x-cream); font: 700 13px/1 var(--x-sans); letter-spacing: 0.14em; white-space: nowrap; clip-path: polygon(0 0, 100% 0, calc(100% - 16px) 100%, 0 100%); padding-right: 34px; }
+      .x-ticker__label i { width: 10px; height: 10px; border-radius: 50%; background: var(--x-ember); box-shadow: 0 0 10px var(--x-ember); animation: x-blink 1.4s steps(2, start) infinite; }
+      .x-ticker__view { flex: 1; overflow: hidden; min-width: 0; }
+      .x-ticker__track { display: flex; width: max-content; animation: x-scroll 38s linear infinite; }
+      .x-ticker:hover .x-ticker__track { animation-play-state: paused; }
+      .x-ticker__list { display: flex; list-style: none; margin: 0; padding: 0; }
+      .x-ticker__list li { display: flex; align-items: center; gap: 10px; padding: 0 26px; min-height: 56px; font: 600 16px/1 var(--x-sans); white-space: nowrap; border-right: 1px solid rgba(255, 255, 255, 0.3); }
+      .x-ticker__list li span { font-weight: 400; opacity: 0.9; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; }
+      @keyframes x-scroll { to { transform: translateX(-50%); } }
+      @keyframes x-blink { to { opacity: 0.35; } }
 
-    <section class="hero-video">
-      <div class="hero-video-wrap" id="heroVideoWrap">
-        <video id="heroVideo" poster="print-store-hero-poster.jpg" playsinline preload="none" loop src="print-store-hero.mp4"></video>
-        <button class="hero-play" id="heroPlayBtn" type="button" aria-label="Play the print store video">▶</button>
-      </div>
-      <p class="hero-caption">The Face The Lions Studio print store is open — <a href="https://chuckroelofsphotography.pixieset.com/photoprintstore/" target="_blank" rel="noopener">shop prints →</a></p>
-    </section>
+      /* mission */
+      .x-mission { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); align-items: start; }
+      .x-card { background: var(--x-ink-2); border: 1px solid var(--x-line); border-radius: 20px; padding: clamp(24px, 3vw, 36px); position: relative; overflow: hidden; }
+      .x-card--glow::after { content: ""; position: absolute; top: -60px; right: -60px; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(224, 159, 45, 0.28), transparent 70%); pointer-events: none; }
+      .x-video { margin-top: 28px; }
+      .x-video__frame { position: relative; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; border: 1px solid var(--x-line); background: #000; }
+      .x-video__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+      .x-quote { font: italic 400 clamp(22px, 2.2vw, 28px)/1.25 var(--x-serif); color: var(--x-cream); margin: 14px 0 0; }
+      @media (max-width: 900px) { .x-mission { grid-template-columns: minmax(0, 1fr); } }
 
-    <section class="radio">
-      <div class="radio-label">HEARD ON THE RADIO • BODY OF BELIEF RADIO</div>
-      <div class="radio-ticker">
-        <div class="radio-track">
-          <span>Holy Template • Nov 24, 10:39 PM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Dancin' Under Sun • Nov 24, 8:11 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Lifted Me Up • Nov 24, 12:15 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Lifted Me Up • Nov 23, 5:05 PM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Hellback Up • Nov 23, 12:35 PM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
-          <span>Holy Template • Nov 24, 10:39 PM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Dancin' Under Sun • Nov 24, 8:11 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Lifted Me Up • Nov 24, 12:15 AM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Lifted Me Up • Nov 23, 5:05 PM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Hellback Up • Nov 23, 12:35 PM&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+      /* about */
+      .x-about { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
+      .x-portrait { margin: 0; }
+      .x-portrait__frame { aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden; border: 1px solid var(--x-gold); box-shadow: 0 0 0 6px rgba(200, 162, 74, 0.08), 0 24px 60px rgba(0, 0, 0, 0.5); background: var(--x-ink-3); }
+      .x-portrait__frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .x-portrait figcaption { margin-top: 14px; font: italic 400 20px/1.2 var(--x-serif); color: var(--x-gold); text-align: center; }
+      .x-about .x-card p:not(.x-kicker) { margin: 0 0 1em; color: var(--x-cream); line-height: 1.7; }
+      .x-about .x-h2 { font-size: clamp(38px, 5vw, 64px); }
+      .x-chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 8px 0 0; padding: 0; }
+      .x-chips li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--x-gold); background-color: var(--x-ink-3); color: var(--x-gold); font: 600 13px/1.2 var(--x-sans); letter-spacing: 0.04em; }
+      .x-chips li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--x-amber); box-shadow: 0 0 8px rgba(224, 159, 45, 0.7); }
+      @media (max-width: 900px) { .x-about { grid-template-columns: minmax(0, 1fr); } .x-portrait { max-width: 420px; width: 100%; margin-inline: auto; } }
+
+      /* mosaic */
+      .x-mosaic { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: clamp(140px, 17vw, 230px); gap: 14px; margin-top: 12px; }
+      .x-tile { position: relative; margin: 0; overflow: hidden; border-radius: 18px; background: var(--x-ink-3); }
+      .x-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-out), filter 1.2s var(--ease-out); filter: saturate(0.92); }
+      .x-tile:hover img { transform: scale(1.06); filter: saturate(1.05); }
+      .x-tile figcaption { position: absolute; left: 14px; bottom: 14px; padding: 7px 12px; border-radius: 999px; background: rgba(11, 11, 14, 0.72); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); font: 500 13px/1.2 var(--x-sans); color: var(--x-cream); }
+      .x-t-a { grid-column: 1 / 5; grid-row: 1 / 3; }
+      .x-t-b { grid-column: 5 / 7; grid-row: 1 / 2; }
+      .x-t-c { grid-column: 5 / 7; grid-row: 2 / 3; }
+      .x-t-d { grid-column: 3 / 7; grid-row: 3 / 4; }
+      .x-t-cap { grid-column: 1 / 3; grid-row: 3 / 4; border-radius: 18px; border: 1px solid var(--x-line); background: linear-gradient(160deg, var(--x-ink-3), var(--x-ink-2)); padding: 24px; display: flex; flex-direction: column; justify-content: flex-end; }
+      .x-t-cap .x-big { font: italic 400 clamp(28px, 2.8vw, 40px)/1.05 var(--x-serif); color: var(--x-gold); }
+      @media (max-width: 720px) {
+        .x-mosaic { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; gap: 10px; }
+        .x-t-a, .x-t-d, .x-t-cap { grid-column: 1 / 3; grid-row: auto; }
+        .x-t-b, .x-t-c { grid-column: auto; grid-row: auto; }
+        .x-t-a { aspect-ratio: 4 / 3; }
+        .x-t-b, .x-t-c { aspect-ratio: 1; }
+        .x-t-d { aspect-ratio: 16 / 7; }
+        .x-t-cap { min-height: 160px; }
+      }
+
+      /* signup band */
+      .x-band { background: radial-gradient(90% 120% at 50% 0%, rgba(224, 159, 45, 0.18), transparent 60%), linear-gradient(180deg, rgba(23, 19, 11, 0.55), rgba(11, 11, 14, 0.35)); border-block: 1px solid var(--x-line); text-align: center; }
+      .x-band .x-lead { margin-inline: auto; }
+      .x-form { margin: 36px auto 0; max-width: 560px; background: var(--x-cream); border-radius: 20px; padding: 10px; box-shadow: 0 0 0 1px var(--x-gold), 0 20px 60px rgba(0, 0, 0, 0.5); overflow: hidden; }
+      .x-form iframe { display: block; margin: 0 auto; max-width: 100%; border: 0; }
+
+      /* music */
+      .x-music { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 16px; }
+      .x-release { grid-row: span 2; background: radial-gradient(120% 90% at 100% 0%, rgba(224, 83, 61, 0.35), transparent 55%), var(--x-ink-2); border-color: rgba(224, 83, 61, 0.55); display: flex; flex-direction: column; justify-content: flex-end; min-height: 380px; }
+      .x-release .x-tag { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; background: var(--x-ember-deep); color: #fff; font: 700 12px/1 var(--x-sans); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: auto; }
+      .x-release .x-tag i { width: 7px; height: 7px; border-radius: 50%; background: #fff; }
+      .x-release h3 { font: 400 clamp(48px, 6vw, 84px)/0.95 var(--x-serif); margin: 40px 0 12px; }
+      .x-label { font: 600 12px/1 var(--x-sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--x-gold); margin-bottom: 14px; }
+      .x-card .x-btns { margin-top: 20px; }
+      .x-stream { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; list-style: none; padding: 0; }
+      .x-stream a { display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border-radius: 999px; border: 1px solid rgba(237, 230, 218, 0.22); text-decoration: none; font: 500 15px/1 var(--x-sans); transition: border-color var(--dur-quick) var(--ease-out), color var(--dur-quick) var(--ease-out); }
+      .x-stream a:hover { border-color: var(--x-gold); color: var(--x-gold); }
+      @media (max-width: 820px) { .x-music { grid-template-columns: minmax(0, 1fr); } .x-release { grid-row: auto; min-height: 320px; } }
+
+      /* shop */
+      .x-shop { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+      .x-tilecard { display: flex; flex-direction: column; text-decoration: none; min-height: 260px; transition: transform var(--dur-quick) var(--ease-out), border-color var(--dur-quick) var(--ease-out); }
+      .x-tilecard:hover { transform: translateY(-4px); border-color: var(--x-gold); }
+      .x-tilecard .x-num { font: 400 20px/1 var(--x-serif); color: var(--x-gold); margin-bottom: auto; }
+      .x-tilecard h3 { margin-top: 48px; }
+      .x-tilecard p { color: var(--x-cream-2); }
+      .x-arrow { margin-top: 20px; font: 600 15px/1 var(--x-sans); color: var(--x-gold); }
+      @media (max-width: 820px) { .x-shop { grid-template-columns: minmax(0, 1fr); } .x-tilecard { min-height: 0; } }
+
+      /* footer */
+      .x-foot { border-top: 1px solid var(--x-line); padding-bottom: 48px; }
+      .x-foot__inner { display: grid; gap: 28px; justify-items: center; text-align: center; padding-top: 48px; }
+      .x-motto { font: italic 400 clamp(32px, 4.4vw, 56px)/1.05 var(--x-serif); color: var(--x-cream); }
+      .x-social { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; list-style: none; margin: 0; padding: 0; }
+      .x-social a { display: inline-flex; align-items: center; min-height: 48px; padding: 0 18px; text-decoration: none; font: 500 15px/1 var(--x-sans); border-radius: 999px; }
+      .x-social a:hover { color: var(--x-gold); background: rgba(200, 162, 74, 0.08); }
+
+      /* views */
+      .x-links a[aria-current="page"] { color: var(--x-gold); }
+      .x-routed [data-view]:not(.is-view) { display: none; }
+      .x-routed .x-sec[data-view]:not([data-view="home"]) { padding-top: clamp(92px, 8vw, 112px) !important; }
+
+      /* fade-up */
+      .x-js .x-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out); }
+      .x-js .x-reveal.is-in { opacity: 1; transform: none; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .x-eye i, .x-ticker__label i { animation: none; }
+        .x-ticker__track { animation: none; }
+        .x-ticker__view { overflow-x: auto; }
+        .x-ticker__list[aria-hidden] { display: none; }
+        .x-js .x-reveal { opacity: 1; transform: none; transition: none; }
+        .x-tile img, .x-tilecard { transition: none; }
+      }
+    </style>
+    <script>document.documentElement.classList.add("x-js");</script>
+  </head>
+  <body class="x-body">
+    <div class="page x-site" id="top">
+      <header class="x-nav" id="x-nav">
+        <div class="x-nav__bar">
+          <a class="x-brand" href="#home" aria-label="Face The Lions Studio, home">
+            <img src="lion-logo.png" alt="Face The Lions Studio logo: a lion with glowing eyes" />
+            <span>Face The Lions Studio</span>
+          </a>
+          <ul class="x-links" id="x-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#photography">Photography</a></li>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <button class="x-burger" id="x-burger" type="button" aria-expanded="false" aria-controls="x-links" aria-label="Open menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+          </button>
         </div>
-      </div>
-    </section>
+      </header>
 
-    <section class="featured">
-      <h3>Our Mission</h3>
-      <p class="mission-text">Face The Lions Studio exists to make music and art that outlives the moment. Every lyric my own, written from the heart, for the one person who needs to hear it. And through my photography, to show the beauty God put in this world that people walk right past. I don't create for numbers — I create because God gave me something to say and something to see, and if it reaches one person, it's done its job. Sight is not the same as vision.</p>
-    </section>
+      <main>
+        <section class="x-hero" aria-label="Introduction" data-view="home">
+          <div class="x-wrap">
+            <h1><img class="x-hero__banner" src="face-the-lions-banner.jpg" alt="Face The Lions Studio: Sight is not the same as vision" width="2048" height="1024" /></h1>
+          </div>
+          <div class="x-hero__copy x-wrap">
+            <p class="x-kicker">Photography • Music • Creative Technology</p>
+            <div class="x-eye x-eye--center" aria-hidden="true"><i></i></div>
+            <p class="x-hero__sub">The creative world of Chuck Roelofs. Every lyric original, every photo seen with heart.</p>
+            <div class="x-btns">
+              <a class="x-btn x-btn--solid" href="https://chuckroelofsphotography.pixieset.com/photoprintstore/" target="_blank" rel="noopener">Shop Prints</a>
+              <a class="x-btn" href="#music">Hear the Music</a>
+            </div>
+          </div>
+        </section>
 
-    <section class="featured section-dark">
-      <h3>Watch My Story</h3>
-      <p class="track">Sight Is Not The Same As Vision</p>
-      <p class="apps-note">The story behind the tagline — God at the center, and why the world doesn't get to define what you can do.</p>
-      <a class="btn btn-gold" href="https://www.youtube.com/watch?v=Qz2YrrvZ0xY" target="_blank" rel="noopener">Watch the story video →</a>
-    </section>
-
-    <div class="album-banner">
-      <h2>Gospel PowerPoint</h2>
-      <p id="album-sub">The new gospel single. Out now.</p>
-      <div id="presave-cta">
-        <a class="btn btn-ember btn-hero" href="https://distrokid.com/hyperfollow/cgrcreative/gospel-powerpoint" target="_blank" rel="noopener">Stream the single →</a>
-      </div>
-      <div id="stream-cta">
-        <div class="links">
-          <a class="btn btn-gold" href="https://open.spotify.com/artist/42YhRJXXXv6ewRAZYzDFm9" target="_blank" rel="noopener">Spotify →</a>
-          <a class="btn btn-gold" href="https://music.apple.com/us/artist/cgr-creative/1896618343" target="_blank" rel="noopener">Apple Music →</a>
-          <a class="btn btn-gold" href="https://music.amazon.com/artists/B0H1MZRJ4R/cgr-creative" target="_blank" rel="noopener">Amazon Music →</a>
+        <div class="x-ticker" data-view="home" role="region" aria-label="Now playing on Body of Belief Radio">
+          <p class="x-ticker__label"><i aria-hidden="true"></i>ON AIR • BODY OF BELIEF RADIO</p>
+          <div class="x-ticker__view">
+            <div class="x-ticker__track">
+              <ul class="x-ticker__list">
+                <li>Love Is Louder <span>Nov 25, 6:42 AM</span></li>
+                <li>The Heartfelt <span>Nov 25, 3:36 AM</span></li>
+                <li>Prayer <span>Nov 25, 3:04 AM</span></li>
+                <li>Holy Template <span>Nov 24, 10:39 PM</span></li>
+                <li>Dancin' Under Sun <span>Nov 24, 8:11 AM</span></li>
+                <li>Lifted Me Up <span>Nov 24, 12:15 AM</span></li>
+              </ul>
+              <ul class="x-ticker__list" aria-hidden="true">
+                <li>Love Is Louder <span>Nov 25, 6:42 AM</span></li>
+                <li>The Heartfelt <span>Nov 25, 3:36 AM</span></li>
+                <li>Prayer <span>Nov 25, 3:04 AM</span></li>
+                <li>Holy Template <span>Nov 24, 10:39 PM</span></li>
+                <li>Dancin' Under Sun <span>Nov 24, 8:11 AM</span></li>
+                <li>Lifted Me Up <span>Nov 24, 12:15 AM</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <section class="x-sec" id="about" data-view="about" aria-labelledby="about-h">
+          <div class="x-wrap x-about">
+            <figure class="x-portrait x-reveal">
+              <div class="x-portrait__frame">
+                <img src="sunset-trees.jpg" alt="The sun setting through bare trees" loading="lazy" />
+              </div>
+              <figcaption>Through Chuck's lens</figcaption>
+            </figure>
+            <div class="x-reveal">
+              <div class="x-card x-card--glow">
+                <p class="x-kicker">About Chuck</p>
+                <h2 class="x-h2" id="about-h">Legally blind. <em>Still seeing clearly.</em></h2>
+                <p>I'm Chuck Roelofs, a photographer, songwriter and builder, and the man behind Face The Lions Studio. I'm legally blind. People hear that and assume the story ends there. It doesn't. Sight is not the same as vision.</p>
+                <p>Behind the camera, I chase the light most people walk right past: a sunset through the trees, frost on a lake, one flower in the grass. In 2020, FOX 9 shared my story, and the message hasn't changed: don't let anyone tell you you can't do something.</p>
+                <p>My music comes out as CGR Creative. Faith-driven metal and hard rock, with some rap and R&amp;B when the story calls for it, and every lyric is my own. My songs play on Body of Belief Radio, and “He Chose Me” is on their Christmas album.</p>
+                <p>I also design and build web apps, because creating doesn't stop at one medium.</p>
+                <p>Most of all, I'm a husband, a dad and a grandpa, and a believer. Every win here belongs to God.</p>
+                <ul class="x-chips">
+                  <li>Photographer</li>
+                  <li>Songwriter as CGR Creative</li>
+                  <li>App builder</li>
+                </ul>
+                <div class="x-btns">
+                  <a class="x-btn x-btn--solid" href="https://www.youtube.com/watch?v=Qz2YrrvZ0xY" target="_blank" rel="noopener">Watch My Story</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="x-sec" id="story" data-view="home" aria-labelledby="story-h">
+          <div class="x-wrap x-mission">
+            <div class="x-reveal">
+              <p class="x-kicker">Story</p>
+              <h2 class="x-h2" id="story-h">Our <em>Mission</em></h2>
+              <p class="x-lead">Face The Lions Studio exists to make music and art that outlives the moment. Every lyric my own, written from the heart, for the one person who needs to hear it. And through my photography, to show the beauty God put in this world that people walk right past.</p>
+              <p class="x-lead">I don't create for numbers. I create because God gave me something to say and something to see, and if it reaches one person, it's done its job.</p>
+            </div>
+            <div class="x-reveal">
+              <div class="x-card x-card--glow">
+                <p class="x-label">Watch My Story</p>
+                <h3 class="x-h3">Sight Is Not The Same As Vision</h3>
+                <p class="x-small">The story behind the tagline.</p>
+                <div class="x-btns">
+                  <a class="x-btn x-btn--solid" href="https://www.youtube.com/watch?v=Qz2YrrvZ0xY" target="_blank" rel="noopener">Watch My Story</a>
+                </div>
+              </div>
+              <div class="x-video">
+                <div class="x-video__frame">
+                  <iframe src="https://www.youtube.com/embed/5LeZpVlqTUA" title="Chuck Roelofs featured on FOX 9, 2020" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <p class="x-label" style="margin-top: 18px">As featured on FOX 9 · 2020</p>
+                <p class="x-quote">“Don't let anyone tell you you can't do something.”</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="x-sec" id="photography" data-view="photography" aria-labelledby="photo-h" style="padding-top: 0">
+          <div class="x-wrap">
+            <div class="x-reveal">
+              <div class="x-eye" aria-hidden="true"><i></i></div>
+              <p class="x-kicker">Photography</p>
+              <h2 class="x-h2" id="photo-h">Seen Through <em>Vision</em></h2>
+            </div>
+            <div class="x-mosaic x-reveal">
+              <figure class="x-tile x-t-a">
+                <img src="boardwalk.jpg" alt="A wooden boardwalk winding through tall golden reeds" />
+                <figcaption>Boardwalk through the reeds</figcaption>
+              </figure>
+              <figure class="x-tile x-t-b">
+                <img src="sun-grass.jpg" alt="The sun glowing low behind tall wild grass" loading="lazy" />
+                <figcaption>Sun behind tall grass</figcaption>
+              </figure>
+              <figure class="x-tile x-t-c">
+                <img src="birches.jpg" alt="White birch trunks standing together in a grove" loading="lazy" />
+                <figcaption>Birches</figcaption>
+              </figure>
+              <div class="x-t-cap">
+                <p class="x-label">Seen with heart</p>
+                <p class="x-big">The beauty people walk past.</p>
+              </div>
+              <figure class="x-tile x-t-d">
+                <img src="purple-flower.jpg" alt="Close-up of a purple flower's petals in soft light" loading="lazy" />
+                <figcaption>Purple flower close-up</figcaption>
+              </figure>
+            </div>
+            <p class="x-small" style="margin-top: 20px">Prints from $3. Ships in 1 to 3 business days.</p>
+            <div class="x-btns">
+              <a class="x-btn x-btn--solid" href="https://chuckroelofsphotography.pixieset.com/photoprintstore/" target="_blank" rel="noopener">Shop Prints</a>
+              <a class="x-btn" href="https://chuckroelofsphotography.myportfolio.com/" target="_blank" rel="noopener">View Portfolio</a>
+              <a class="x-btn" href="https://www.lulu.com/shop/chuck-roelofs/chucks-2027-photo-wall-calendar/paperback/product-p68k5qr.html?page=1&amp;pageSize=4" target="_blank" rel="noopener">2027 Calendar, $25</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="x-sec x-band" id="contact" data-view="contact" aria-labelledby="contact-h">
+          <div class="x-wrap x-reveal">
+            <div class="x-eye x-eye--center" aria-hidden="true"><i></i></div>
+            <p class="x-kicker">Free for your phone</p>
+            <h2 class="x-h2" id="contact-h">Get a free <em>wallpaper</em></h2>
+            <p class="x-lead">Join my list and get Fire on the Ice, a winter sunset over First Lake, free for your phone. Plus my Print of the Month and new music first. No spam, ever.</p>
+            <div class="x-form">
+              <iframe width="540" height="305" src="https://cb2490e3.sibforms.com/v2/serve/MUIFADksDUmJh3bNFGKoMNkxIOTIhWBaKgz7XtfTpb_V3ojx-zUvclAq0ZyLfw4NDnmXL69sb5A9NesF-eYZeROg34Bc9iKlBVZHD4wWYsxFNuB1oAALrp7ty_lV8wdOk5ZzoQnBtLD9aMvPWVBvGN7v7nA-w11IAaB7dCzuKlusxx561nhEKoUiEfIE_R0WmZsUMArLGawHtFh5nw==" frameborder="0" scrolling="auto" allowfullscreen title="Sign up for the free wallpaper"></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section class="x-sec" id="music" data-view="music" aria-labelledby="music-h">
+          <div class="x-wrap">
+            <div class="x-reveal">
+              <p class="x-kicker">Music</p>
+              <h2 class="x-h2" id="music-h">Music as <em>CGR Creative</em></h2>
+            </div>
+            <div class="x-music x-reveal">
+              <article class="x-card x-release">
+                <p class="x-tag"><i aria-hidden="true"></i>Out now</p>
+                <h3>Gospel PowerPoint</h3>
+                <p class="x-lead">The new gospel single.</p>
+                <div class="x-btns">
+                  <a class="x-btn x-btn--ember" href="https://distrokid.com/hyperfollow/cgrcreative/gospel-powerpoint" target="_blank" rel="noopener">Stream the single</a>
+                </div>
+              </article>
+              <article class="x-card">
+                <p class="x-label">Featured track</p>
+                <h3 class="x-h3">Jump</h3>
+                <div class="x-btns">
+                  <a class="x-btn" href="https://open.spotify.com/track/1HDlSD9xrnD3R2RRihWC5z" target="_blank" rel="noopener">Play Jump on Spotify</a>
+                </div>
+              </article>
+              <article class="x-card">
+                <p class="x-label">Playlist</p>
+                <h3 class="x-h3">Metal Life</h3>
+                <p class="x-small">Faith-driven metal and hard rock.</p>
+                <div class="x-btns">
+                  <a class="x-btn" href="https://open.spotify.com/playlist/3yRLD0nRJm30UywpJ96YU4" target="_blank" rel="noopener">Open the playlist</a>
+                </div>
+              </article>
+            </div>
+            <ul class="x-stream" aria-label="Listen on">
+              <li><a href="https://open.spotify.com/artist/42YhRJXXXv6ewRAZYzDFm9" target="_blank" rel="noopener">Spotify</a></li>
+              <li><a href="https://music.apple.com/us/artist/cgr-creative/1896618343" target="_blank" rel="noopener">Apple Music</a></li>
+              <li><a href="https://music.youtube.com/@chuckroelofs" target="_blank" rel="noopener">YouTube Music</a></li>
+              <li><a href="https://music.amazon.com/artists/B0H1MZRJ4R/cgr-creative" target="_blank" rel="noopener">Amazon Music</a></li>
+              <li><a href="https://www.iheart.com/artist/cgr-creative-50743276" target="_blank" rel="noopener">iHeart</a></li>
+            </ul>
+            <p class="x-small" style="margin-top: 20px">Music released as CGR Creative, a Face The Lions Studio label.</p>
+          </div>
+        </section>
+
+        <section class="x-sec" id="shop" data-view="shop" aria-labelledby="shop-h" style="padding-top: 0">
+          <div class="x-wrap">
+            <div class="x-reveal">
+              <div class="x-eye" aria-hidden="true"><i></i></div>
+              <p class="x-kicker">Shop</p>
+              <h2 class="x-h2" id="shop-h">Take a piece <em>home</em></h2>
+            </div>
+            <div class="x-shop x-reveal">
+              <a class="x-card x-tilecard" href="https://chuckroelofsphotography.pixieset.com/photoprintstore/" target="_blank" rel="noopener">
+                <span class="x-num" aria-hidden="true">01</span>
+                <h3 class="x-h3">Prints</h3>
+                <p>Fine art photo prints from $3.</p>
+                <span class="x-arrow">Shop prints →</span>
+              </a>
+              <a class="x-card x-tilecard" href="https://app.amazecommerce.com/shop/cgr-creative" target="_blank" rel="noopener">
+                <span class="x-num" aria-hidden="true">02</span>
+                <h3 class="x-h3">Merch</h3>
+                <p>The CGR Creative merch store.</p>
+                <span class="x-arrow">Shop merch →</span>
+              </a>
+              <a class="x-card x-tilecard" href="https://cgr-apps.pages.dev/" target="_blank" rel="noopener">
+                <span class="x-num" aria-hidden="true">03</span>
+                <h3 class="x-h3">Web apps by Chuck</h3>
+                <p>Custom web apps: a music player, a mastering studio, and more, designed and built by Chuck.</p>
+                <span class="x-arrow">See the apps →</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="x-foot">
+        <div class="x-wrap x-foot__inner">
+          <div class="x-eye x-eye--center" aria-hidden="true"><i></i></div>
+          <p class="x-motto">Sight is not the same as vision.</p>
+          <ul class="x-social" aria-label="Follow">
+            <li><a href="https://www.facebook.com/CGRCreative58" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://instagram.com/facethelionsstudio" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://tiktok.com/@chuckroelofsphotography" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.threads.com/@cgr_creative" target="_blank" rel="noopener">Threads</a></li>
+            <li><a href="https://chuckroelofs.substack.com" target="_blank" rel="noopener">Substack</a></li>
+          </ul>
+          <p class="x-small">© 2026 Face The Lions Studio</p>
+        </div>
+      </footer>
     </div>
+    <script src="hark.js"></script>
+    <script>
+      (function () {
+        var nav = document.getElementById("x-nav");
+        var burger = document.getElementById("x-burger");
+        function onScroll() { nav.classList.toggle("is-solid", window.scrollY > 40); }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+        function setOpen(open) {
+          nav.classList.toggle("is-open", open);
+          burger.setAttribute("aria-expanded", open ? "true" : "false");
+          burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        }
+        burger.addEventListener("click", function () { setOpen(!nav.classList.contains("is-open")); });
+        document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
 
+        /* fade-up */
+        var io = "IntersectionObserver" in window ? new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } });
+        }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }) : null;
+        function reveal(scope) {
+          var items = scope.querySelectorAll ? scope.querySelectorAll(".x-reveal") : [];
+          [].forEach.call(items, function (el) { el.classList.remove("is-in"); });
+          void document.body.offsetHeight;
+          [].forEach.call(items, function (el) {
+            if (io) { io.unobserve(el); io.observe(el); } else { el.classList.add("is-in"); }
+          });
+        }
 
-    <section class="newsletter section-alt" id="newsletter">
-      <h3>Get a free wallpaper</h3>
-      <p class="apps-note">Join my list and get Fire on the Ice, a winter sunset over First Lake, free for your phone. Plus my Print of the Month and new music first. No spam, ever.</p>
-      <div class="newsletter-embed">
-        <iframe width="540" height="305" src="https://cb2490e3.sibforms.com/v2/serve/MUIFADksDUmJh3bNFGKoMNkxIOTIhWBaKgz7XtfTpb_V3ojx-zUvclAq0ZyLfw4NDnmXL69sb5A9NesF-eYZeROg34Bc9iKlBVZHD4wWYsxFNuB1oAALrp7ty_lV8wdOk5ZzoQnBtLD9aMvPWVBvGN7v7nA-w11IAaB7dCzuKlusxx561nhEKoUiEfIE_R0WmZsUMArLGawHtFh5nw==" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
-      </div>
-    </section>
+        /* views with hash routing */
+        var VIEWS = ["home", "about", "photography", "music", "shop", "contact"];
+        var parts = document.querySelectorAll("[data-view]");
+        var tabs = document.querySelectorAll(".x-links a");
+        var current = null;
+        if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+        document.body.classList.add("x-routed");
 
-    <section class="featured section-dark">
-      <h3>Featured track</h3>
-      <p class="track">Jump</p>
-      <a class="btn btn-gold" href="https://open.spotify.com/track/1HDlSD9xrnD3R2RRihWC5z" target="_blank" rel="noopener">Listen to Jump →</a>
-    </section>
-
-    <section>
-      <h3>Music</h3>
-      <p class="apps-note">Music released as CGR Creative, a Face The Lions Studio label.</p>
-      <div class="links">
-        <a href="https://open.spotify.com/artist/42YhRJXXXv6ewRAZYzDFm9" target="_blank" rel="noopener">Spotify</a>
-        <a href="https://music.apple.com/us/artist/cgr-creative/1896618343" target="_blank" rel="noopener">Apple Music</a>
-        <a href="https://music.youtube.com/@chuckroelofs" target="_blank" rel="noopener">YouTube Music</a>
-        <a href="https://music.amazon.com/artists/B0H1MZRJ4R/cgr-creative" target="_blank" rel="noopener">Amazon Music</a>
-        <a href="https://www.iheart.com/artist/cgr-creative-50743276" target="_blank" rel="noopener">iHeart</a>
-      </div>
-    </section>
-
-    <section>
-      <h3>Find Face The Lions Studio</h3>
-      <div class="links">
-        <a href="https://www.facebook.com/CGRCreative58" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://instagram.com/facethelionsstudio" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://tiktok.com/@chuckroelofsphotography" target="_blank" rel="noopener">TikTok</a>
-        <a href="https://www.threads.com/@cgr_creative" target="_blank" rel="noopener">Threads</a>
-        <a href="https://chuckroelofs.substack.com" target="_blank" rel="noopener">Substack</a>
-      </div>
-    </section>
-
-    <section class="featured">
-      <h3>Photography</h3>
-      <p class="apps-note">Professional photography — galleries, the fall color series, and client work from years behind the lens.</p>
-      <p class="apps-note">As featured on FOX 9 (2020) — "Don't let anyone tell you you can't do something."</p>
-      <div class="video-embed"><iframe src="https://www.youtube.com/embed/5LeZpVlqTUA" title="FOX 9: Blind Minnesota photographer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <a class="btn btn-gold" href="https://chuckroelofsphotography.myportfolio.com/" target="_blank" rel="noopener">View the photography portfolio →</a>
-      <a class="btn btn-gold" href="https://chuckroelofsphotography.pixieset.com/photoprintstore/" target="_blank" rel="noopener">Shop prints →</a>
-      <a class="btn btn-gold" href="https://www.lulu.com/shop/chuck-roelofs/chucks-2027-photo-wall-calendar/paperback/product-p68k5qr.html?page=1&pageSize=4" target="_blank" rel="noopener">2027 Calendar — $25 →</a>
-      <a class="btn btn-gold" href="https://app.amazecommerce.com/shop/cgr-creative" target="_blank" rel="noopener">Shop merch →</a>
-    </section>
-
-    <section class="featured section-alt">
-      <h3>Creative Technology</h3>
-      <p class="apps-note">Custom web apps — a music player, a mastering studio, and more, designed and built by Chuck.</p>
-      <a class="btn btn-gold" href="https://cgr-apps.pages.dev/" target="_blank" rel="noopener">Web apps by Chuck →</a>
-    </section>
-
-    <footer>
-      <div class="motto">"Sight is not the same as vision."</div>
-      <div>© 2026 Face The Lions Studio</div>
-    </footer>
-
-  </div>
-<script>
-(function () {
-  var btn = document.getElementById('heroPlayBtn');
-  var video = document.getElementById('heroVideo');
-  if (btn && video) {
-    btn.addEventListener('click', function () {
-      video.play();
-      btn.classList.add('hidden');
-    });
-    video.addEventListener('pause', function () {
-      btn.classList.remove('hidden');
-    });
-  }
-})();
-</script>
-</body>
+        function viewFor(hash) {
+          var id = (hash || "").replace(/^#/, "");
+          if (VIEWS.indexOf(id) > -1) return id;
+          var el = id && document.getElementById(id);
+          var host = el && el.closest && el.closest("[data-view]");
+          return host ? host.getAttribute("data-view") : "home";
+        }
+        function show(view) {
+          [].forEach.call(parts, function (p) { p.classList.toggle("is-view", p.getAttribute("data-view") === view); });
+          [].forEach.call(tabs, function (a) {
+            if (a.getAttribute("href") === "#" + view) a.setAttribute("aria-current", "page");
+            else a.removeAttribute("aria-current");
+          });
+          setOpen(false);
+          window.scrollTo(0, 0);
+          onScroll();
+          if (view !== current) {
+            current = view;
+            reveal(document.querySelector("main"));
+          }
+        }
+        function route() { show(viewFor(location.hash)); }
+        window.addEventListener("hashchange", route);
+        [].forEach.call(document.querySelectorAll('a[href^="#"]'), function (a) {
+          a.addEventListener("click", function () {
+            if (a.getAttribute("href") === location.hash || (a.getAttribute("href") === "#home" && !location.hash)) {
+              setOpen(false);
+              window.scrollTo(0, 0);
+            }
+          });
+        });
+        route();
+        window.addEventListener("load", function () { window.scrollTo(0, 0); onScroll(); });
+      })();
+    </script>
+  </body>
 </html>
