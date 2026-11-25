@@ -192,6 +192,7 @@
 
       /* shop */
       .x-appshot { display: block; width: calc(100% + 2 * clamp(24px, 3vw, 36px)); max-width: none; margin: calc(-1 * clamp(24px, 3vw, 36px)) calc(-1 * clamp(24px, 3vw, 36px)) 20px; height: auto; aspect-ratio: 16 / 10; flex: 0 0 auto; object-fit: cover; object-position: top center; border-bottom: 1px solid var(--x-line); }
+      .x-appshot--soon { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(212, 168, 75, 0.14), rgba(0, 0, 0, 0.35)); color: var(--x-gold); font: 400 clamp(22px, 2.4vw, 30px)/1 var(--x-serif); letter-spacing: 0.02em; }
       .x-shop { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
       .x-tilecard { display: flex; flex-direction: column; text-decoration: none; min-height: 260px; transition: transform var(--dur-quick) var(--ease-out), border-color var(--dur-quick) var(--ease-out); }
       .x-tilecard:hover { transform: translateY(-4px); border-color: var(--x-gold); }
@@ -517,6 +518,13 @@
                 <p>Master a track in your browser: EQ, compressor, limiter, and loudness metering.</p>
                 <span class="x-arrow">Open the studio →</span>
               </a>
+              <div class="x-card x-tilecard">
+                <div class="x-appshot x-appshot--soon" aria-hidden="true">Coming soon</div>
+                <span class="x-num" aria-hidden="true">04</span>
+                <h3 class="x-h3">Career Quest</h3>
+                <p>A career guidance app for students and teachers.</p>
+                <span class="x-arrow">Coming soon</span>
+              </div>
             </div>
             <div class="x-card x-reveal" style="margin-top: 16px; text-align: center; padding: clamp(28px, 4vw, 44px);">
               <h3 class="x-h3">Need an app for your small business?</h3>
